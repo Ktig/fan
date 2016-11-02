@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>fan</title>
+    <link rel="stylesheet" href="css/fan.css">
+</head>
+<body>
+</body>
+</html>
+<script>
+var body = document.getElementsByTagName('body')[0];
+var div = document.createElement('div');
+div.className = 'main';
+body.appendChild(div);
+var main = document.getElementsByClassName('main')[0];
+var str = "";
+var arr = [];
+// for(var i = 0; i<18; i++){
+// var div =document.createElement('div');
+//     div.id = 'main'+i;
+//      main.appendChild(div)
+// }
+for (var i = 0; i < 18; i++) {
+    str = '<div id=main' + i + '></div>';
+    arr.push(str)
+}
+main.innerHTML = arr.join('');
+var span = document.createElement('span');
+span.id = "main18";
+main.appendChild(span)
+var main18 = document.getElementById('main18');
+var flag = true;
+var arrDiv = main.getElementsByTagName('div');
+
+var arry = [' #DB3535', '#F16729', ' #F89424', ' #FFCF13', '#FFEA0D', '#87B11F', '#008254', '#3377B6', '#4C549F', '#774395', '#CA0C86 ', '#FCF27E', '#FFEA0D', '#FFCF13', '#F89424', '#F16729', ' #DB3535'];
+for(var i =0; i<arrDiv.length; i++){
+    arrDiv[i].style.background=arry[i];
+}
+main18.onclick = function() {
+    var ar = [];
+    if (flag) {
+        for (var i = 1; i < 10; i++) {
+            arrDiv[i].style.transition = '-webkit-transform 3s';
+            arrDiv[i].style.transform = 'rotate(-' + (9 - i) * 10 + 'deg)';
+        }
+        for (var i = 10; i < 18;) {
+            arrDiv[i].style.transition = '-webkit-transform 3s';
+            arrDiv[i].style.transform = 'rotate(' + ((i++) * 10 - 90) + 'deg)'
+        }
+    } else {
+        for (var i = 0; i < 18; i++) {
+            arrDiv[i].style.transition = '-webkit-transform 3s';
+            arrDiv[i].style.transform = 'rotate(0deg)';
+        }
+    }
+    flag = !flag;
+}
+</script>

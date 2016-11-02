@@ -1,0 +1,29 @@
+ .main {
+        width: 800px;
+        position: relative;
+        height: 500px;
+        top: 50%;
+        left: 50%;
+        margin-top: 200px;
+    }
+    
+    .main div {
+        width: 80px;
+        height: 400px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+        -webkit-transform-origin: 25px 360px;
+    }
+    #main18 {
+        display: block;
+        position: absolute;
+        top: 355px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: #ccc;
+        border-radius: 10px;
+        z-index: 18;
+    }
